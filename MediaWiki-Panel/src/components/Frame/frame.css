@@ -1,0 +1,108 @@
+.frame{
+    height: 30px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    box-shadow: 0px 1px 2px black;
+    -webkit-app-region: drag;
+}
+
+.no-drag{
+    -webkit-app-region: no-drag;
+}
+
+.frame > div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.frame > .menubar{
+    align-items: center;
+    padding: 0px 10px;
+    gap: 1px;
+}
+
+.frame > .menubar > div:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5px;
+}
+
+.frame > .menubar > div > .logo{
+    position: relative;
+    height: 18px;
+    padding: 0px 5px;
+}
+
+.frame > .menubar > div > svg{
+    position: absolute;
+    fill: rgba(242, 244, 248, 0.2);
+    transform: rotate(45deg);
+    height: 28px;
+    width: 28px;
+    padding: 0px 5px;
+}
+
+.frame > .menubar > div > svg path{
+    stroke: rgba(242, 244, 248, 0.75); 
+    stroke-width: 2;    
+}
+
+.frame > .menubar > .menus{
+    display: flex;
+    align-items: center;
+    font-size: small;
+    height: 20px;
+    padding: 2px 10px;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.frame > .menubar > .menus > span{
+    padding-bottom: 3px;
+    
+}
+
+.frame .menus:hover{
+    background-color: hsl(219, 19%, 20%);
+}
+
+.frame .menus.on{
+    background-color: hsl(219, 19%, 20%);
+}
+
+
+/* WINDOWS */
+.frame .winbar{
+    display: flex;
+    justify-content: right;
+}
+
+.frame .win-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    transition: all 0.1s;
+}
+
+.frame .close:hover{
+    background-color: #E81123;
+}
+
+.frame .close:active{
+    background-color: #e81123c8;
+}
+
+.frame .min:hover{
+    background-color: hsl(219, 19%, 11%);
+}
+
+.frame .min:active{
+    background-color: hsl(219, 19%, 5%);
+}

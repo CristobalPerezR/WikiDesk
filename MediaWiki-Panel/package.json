@@ -1,0 +1,78 @@
+{
+  "name": "WikiDesk",
+  "private": true,
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "type": "module",
+  "description": "Panel para hacer pull/push de paginas wikimedia mediante botpassword.",
+  "author": {
+    "name": "CristobalPerezR",
+    "url": "https://github.com/CristobalPerezR"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "dev:electron": "concurrently \"vite\" \"wait-on http://localhost:7070 && electronmon . \"",
+    "electron:build": "pnpm run build && electron-builder"
+  },
+  "electronmon": {
+    "patterns": [
+      "**/*",
+      "!config/user/**"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.18.0",
+    "react": "^19.2.6",
+    "react-bootstrap-icons": "^1.11.6",
+    "react-dom": "^19.2.6",
+    "tree-kill": "^1.2.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "axios": "^1.18.0",
+    "concurrently": "^10.0.3",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
+    "electronmon": "^2.0.4",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.12",
+    "vite-plugin-svgr": "^5.2.0",
+    "wait-on": "^9.0.10"
+  },
+  "build": {
+    "appId": "com.app.wikidesk",
+    "productName": "WikiDesk",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../Api-Bot/dist",
+        "to": "api"
+      }
+    ],
+    "win": {
+      "target": "portable",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "asar": true
+  }
+}

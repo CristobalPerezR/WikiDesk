@@ -1,0 +1,13 @@
+# Foldiers
+node_modules
+dist
+dist-electron
+
+# Local Testing Files
+save.json
+tree.txt
+/Api-Bot/src/config/*.json
+
+#personal configs
+/package.json
+/pnpm-lock.yaml

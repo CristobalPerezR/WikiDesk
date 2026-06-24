@@ -1,0 +1,31 @@
+:root{
+  --bg:      #1d222b;
+  --panel:   #1d222b;
+  --panel2:  #252c37;
+
+  --text:    #f2f4f8;
+  --muted:   #97a1b0;
+  --border:  #3a4454;
+
+  --green:   #59d185;
+  --red:     #ff5f57;
+  --gray:    #8d96a5;
+
+  --accent:  #4f8cff;
+  user-select: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  /* outline: 1px solid red; */
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}

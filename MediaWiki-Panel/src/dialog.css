@@ -1,0 +1,34 @@
+.loading{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hwb(220 11% 83% / 0.3);
+}
+
+.loading > div{
+    /* border: 1px black solid; */
+    color: var(--text);
+}
+
+.loading > div > span{
+    display: inline-block;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 5px dotted var(--text);
+
+    animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
